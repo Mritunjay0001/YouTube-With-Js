@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script
+      src="https://kit.fontawesome.com/b63073adcc.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  *:focus{
+outline: none;
+  }
+    body{
+        background-color: rgb(32,32,32);
+        position: relative;
+        font-family: 'roboto', sans-serif;
+    }
+    #container {
+        /* display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 5%;
+        justify-content: space-between;
+        margin-top: 150px;
+        color: white;
+        background-color: rgb(24,24,24);
+        background-color: black; */
+        width: calc(100% - 250px);
+    margin-top: 120px;
+    margin-left: 200px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 23%);
+    grid-gap: 20px;
+    overflow-x: hidden;
+    color: white;
+    background-color: black;
+
+    }
+     img{
+      width: 100%;
+    height: 150px;
+    object-fit: cover;
+    } 
+   
+
+      #navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* background-color: rgb(32,32,32); */
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    padding: 0 2.5vw;
+}
+
+.toggle-btn{
+    width: 20px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-btn span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #979797;
+}
+
+.toggle-btn span:nth-child(1){
+    top: 0;
+}
+
+.toggle-btn span:nth-child(3){
+    top: 100%;
+}
+
+.logo{
+    height: 30px;
+    margin: -10px 30px 0;
+    color: white;
+    width: auto;
+}
+
+.search-box{
+    position: relative;
+    max-width: 350px;
+    width: 70%;
+    height: 35px;
+    display: flex;
+    color: white;
+    
+}
+
+#query{
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    padding: 0 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+    background-color: black;
+    color: white;
+}
+
+#search{
+    /* width: 20%;
+    height: 110%;
+    background: #f0f0f0;
+    border: 2px solid #dbdbdb;
+    padding: 5px 0;
+    border-left: none; */
+    width: 100%;
+        font-size: 16px;
+      padding: 11.5px;
+      background-color: rgb(18, 16, 16);
+        margin-left: -8px;
+        margin-top: -3px;
+      color: white;
+
+}
+
+/* .search-btn img{
+    height: 100%;
+    width: 75px;
+        font-size: 16px;
+      padding: 10px;
+      background-color: rgb(18, 16, 16);
+      color: white;
+} */
+
+.user-options{
+    height: 35px;
+    display: flex;
+    margin-left: 47%;
+    align-items: center;
+}
+
+.user-options .icon{
+    height: 80%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.user-dp{
+    cursor: pointer;
+    height: 30px;
+    width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+ .img2{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+      #sidebar{
+        position: fixed;
+        top: 60px;
+        left: 0;
+        min-width: 200px;
+        height: calc(100vh - 60px);
+        padding-right: 10px;
+        /* /* background-color: rgb(32,32,32); */
+        background-color:white
+        
+      }
+      .link{
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        display:flex ;
+        align-items: center;
+        text-transform: capitalize;
+        color:black;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+
+
+      }
+      .link2{
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        display:flex ;
+        align-items: center;
+        text-transform: capitalize;
+        color: black;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+
+
+      }
+      .link:hover,
+      .link2:hover{
+        background-color: gray;
+        width: 87%;
+      }
+      .separator{
+        border:none;
+        border-bottom: 1px solid rgba(0, 0, 0,0.1);
+        margin: 20px 0;
+      }
+      .link img{
+    height: 22px;
+    margin-right: 20px;
+    width: 30px;
+}.link2 img{
+    height: 22px;
+    margin-right: 20px;
+    width: 30px;
+}
+.filters{
+    position: fixed;
+    left: 210px;
+    top: 60px;
+    width: calc(100% - 250px);
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* border: 1px solid black; */
+}
+
+.filters::-webkit-scrollbar{
+    display: none;
+}
+
+.filter-options{
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #f0f0f0;
+    border: 1px solid #dbdbdb;
+    text-transform: capitalize;
+    margin-right: 10px;
+    color: #242424;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.filter-options.active{
+    color: #fff;
+    background: #242424;
+}
+
+</style>
+<body>
+   
+   <div id="navbar">
+    <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <img src="https://www.freepnglogos.com/uploads/youtube-logo-png/new-youtube-logo-icon-update-youtube-issue-fortawesome-font-3.png" class="logo" alt="">
+    <div class="search-box">
+        <input type="text" id="query" placeholder="search">
+        <button onclick="searchVidios()"><i id="search" class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="user-options">
+        <img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/video.PNG" class="icon" alt="">
+        <img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/grid.PNG" class="icon" alt="">
+        <img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/bell.PNG" class="icon" alt="">
+        <div class="user-dp">
+            <img class="img2" src="https://scontent.fixr3-2.fna.fbcdn.net/v/t1.6435-9/88138484_778034006017692_3013273991730167808_n.jpg?stp=dst-jpg_s960x960&_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PaYY7ZNyLQkAX-qeu5h&_nc_ht=scontent.fixr3-2.fna&oh=00_AT9g9uYeziiZLY0nloNwjmD0RyW1DoGck5FOdGp2TrlpWw&oe=634A3F18" alt="">
+        </div>
+    </div>
+   </div>
+   <!-- <hr> -->
+   <div id="sidebar">
+      <a href="#" class="link2"> <img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/home.PNG" alt=""></i> Home</a>
+      <a href="#" class="link"> <img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/explore.PNG" alt=""> Explore</a>
+      <a href="#" class="link"><img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/subscription.PNG" alt=""></i>Subscription</a>
+      <hr class="separator">
+      <a href="#" class="link"><img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/library.PNG" alt="">
+        Library</a>
+      <a href="#" class="link"><img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/history.PNG" alt=""></i>History</a>
+      <a href="#" class="link"><img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/your-video.PNG" alt=""></i>Your Videos</a>
+      <a href="#" class="link"><img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/watch-later.PNG" alt=""></i>Watch leter</a>
+      <a href="#" class="link"><img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/liked%20video.PNG" alt=""></i>Like video</a>
+      <a href="#" class="link"> <img src="https://raw.githubusercontent.com/kunaal438/youtube-clone/6f8ed562b19c1c4c2a30eaa9cd05ebcf1c5eac8f/img/show%20more.PNG" alt=""> Show More</a>
+   </div>
+
+
+   <div class="filters">
+    <button class="filter-options active">all</button>
+    <button class="filter-options">CSS</button>
+    <button class="filter-options">web development</button>
+    <button class="filter-options">treanding</button>
+    <button class="filter-options">comedy</button>
+    <button class="filter-options">marvel</button>
+    <button class="filter-options">javascript</button>
+    <button class="filter-options">artificial intelligence</button>
+    <button class="filter-options">machine learning</button>
+    <button class="filter-options">trending</button>
+</div>
+   
+   <div id="container">
+
+   </div>
+</body>
+</html>
+<script src="index.js"></script>
